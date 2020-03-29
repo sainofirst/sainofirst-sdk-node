@@ -1,0 +1,94 @@
+{
+    
+        "SFV001" : "SFV001: No api key is defined while initializing Sainofirst services. Please add api key as environment variable SAINOFIRST_API_KEY or pass it as an argument to constructor function",
+        "SFT001" : "SFT001: Api key must be of type string",
+        "SFV002" : "SFV002: Api key must not be a empty string",
+        
+        "SFT002" : "SFT002: Expected object data type",
+        "SFT003" : "SFT003: Expected function data type",
+        "SFT004" : "SFT004: Expected object or function data type",
+        "SFT005" : "SFT005: Expected 2 arguments only",
+
+        "SFV003" : "SFV003: 'message' cannot be undefined",
+        "SFV004" : "SFV004: 'senderid' cannot be undefined",
+        "SFV005" : "SFV005: 'route' cannot be undefined",
+        "SFV006" : "SFV006: 'number' cannot be undefined", 
+
+        "SFT006" : "SFT006: 'message' should be a string",
+        "SFT007" : "SFT007: 'senderid' should be a string",
+        "SFT008" : "SFT008: 'route' should be a string",
+        "SFT009" : "SFT009: 'number' should be a array",
+
+        "SFV007" : "SFV007: 'message' should not be a empty string",
+        "SFV008" : "SFV008: 'senderid' should not be a empty string",
+        "SFV009" : "SFV009: 'route' should not be a empty string",
+        "SFV010" : "SFV010: 'number' should not be a empty array",
+
+        "SFT010" : "SFT010: 'unicode' should be a number and its value should either be 0 or 1 ",
+        "SFT011" : "SFT011: 'flash' should be a number and its value should either be 0 or 1 ",
+
+        "SFT012" : "SFT012: 'time' should be a string ",
+        "SFT013" : "SFT013: 'time' should not be a empty string",
+        "SFV011" : "SFV011:  please enter time in proper format (YYYY-MM-DD HH:MM:SS)",
+
+        "SFV012" : "SFV012: 'subscription_id' is not defined",
+        "SFV013" : "SFV013: 'maxLengthOfCall' is not defined",
+        "SFV014" : "SFV014: 'is_text' is not defined",
+        "SFV015" : "SFV015: 'numbers' is not defined",
+
+        "SFT014" : "SFT014: 'subsscription_id' should be of type number",
+        "SFT015" : "SFT015: 'maxLengthOfCall' should be of type number",
+        "SFT016" : "SFT016: 'is_text' value should be boolean",
+        "SFT017" : "SFT017: 'numbers' should be a array",
+
+        "SFV016" : "SFV016: 'numbers' array cannot be empty",
+        "SFV017" : "SFV017: elements of numbers array must be string",
+        "SFV018" : "SFV018: numbers array should not have empty strings",
+
+        "SFT018" : "SFT018: 'send_at' should be a string",
+        "SFT019" : "SFT019: 'send_at' should not be a empty string",
+        "SFV019" : "SFV019:  please enter 'send_at' in proper format (YYYY-MM-DD HH:MM:SS)",
+
+        "SFV020" : "SFV020: you must provide a 'timezone' while scheduling a call",
+        "SFT020" : "SFV020: 'timezone' must be a string",
+        "SFV021" : "SFV021: 'timezone 'must not be an empty string",
+
+        "SFT021" : "SFT021: 'config' must be a object",
+        "SFV022" : "SFT022: 'config' cannot be a empty object",
+
+        "SFT022" : "SFT022: 'repeat' must be of type number",
+        "SFT023" : "SFT023: 'callTransfer' must be of type dict",
+        "SFV023" : "SFT023: 'callTransfer' cannot be a empty object",
+        "SFV024" : "SFV024: 'transferKey' cannot be undefined",
+        "SFT024" : "SFT024: 'transferKey' must be a number",
+        "SFV025" : "SFV025: 'transferNumber' cannot be undefined",
+        "SFT025" : "SFT025: 'transferNumber' must be a number",
+
+        "SFV026" : "SFV026: text field cannot be undefined while sending a text to speech voice call",
+        "SFT026" : "SFT026: text field should be of type string",
+        "SFV027" : "SFV027: text field should not be empty string",
+
+        "SFV028" : "SFV028: 'speech_rate' is not defined",
+        "SFT027" : "SFT027: 'speech_rate' should be of type number",
+
+        "SFV029" : "SFV029: 'language_id' is not defined",
+        "SFT028" : "SFT028: 'language_id' should be of type number",
+
+        "SFV030" : "SFV030: 'audio_file_url' field cannot be undefined while sending a text to speech voice call",
+        "SFT029" : "SFT029: 'audio_file_url' field should be of type string",
+        "SFV031" : "SFV031: 'audio_file_url' field should not be empty string",
+
+        "SFT030" : "SFT030: 'voice_id' must be a number",
+        
+        "SFV032" : "SFV032: 'voice_id' should not be undefined",
+        "SFV033" : "SFV033: 'new_send_at' should not be undefined",
+        "SFV034" : "SFV034: 'timezone' should not be undefined",
+
+        "SFT031" : "SFT031: 'new_send_at' should be a string",
+        "SFT032" : "SFT032: 'new_send_at' should not be a empty string",
+        "SFV035" : "SFV035:  please enter 'new_send_at' in proper format (YYYY-MM-DD HH:MM:SS)",
+        "SFV036" : "SFV036: 'speech_rate1' should be between 0.5 and 2"
+
+
+
+}
