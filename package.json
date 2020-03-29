@@ -1,14 +1,23 @@
 {
   "name": "sainofirst-sdk-node",
   "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
+  "description": "The Sainofirst SDK for python provides a python API for Sainofirst communication services.",
+  "main": "lib/index.js",
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.ts",
     "build": "tsc"
   },
-  "author": "sainofirst",
+  "keywords": ["sdk", "bulk-sms", "bulk-voice", "sms-gateway", "voice-call"],
+  "bugs": {
+    "url": "https://github.com/sainofirst/sainofirst-sdk-node/issues"
+  },
+  "homepage": "https://www.sainofirst.com",
+  "author": "Sainofirst",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sainofirst/sainofirst-sdk-node.git"
+},
   "devDependencies": {
     "@types/mocha": "^7.0.2",
     "@types/node": "^13.9.5",
@@ -18,10 +27,10 @@
     "typescript": "^3.8.3"
   },
   "files": [
-    "dist/**/*"
+    "lib/**/*"
   ],
   "dependencies": {
     "axios": "^0.19.2"
   },
-  "typings": "dist/index.d.ts"
+  "types": "lib/index.d.ts"
 }
