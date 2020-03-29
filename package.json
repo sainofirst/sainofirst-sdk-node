@@ -1,0 +1,11 @@
+{
+  "name": "sainofirst-sdk-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "sainofirst",
+  "license": "Apache-2.0"
+}
