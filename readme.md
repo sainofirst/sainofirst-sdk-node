@@ -152,7 +152,7 @@ Define a callback function which will get executed after recieving response from
 
 ```js
 function callback(success, error){
-    if (error != None) throw Error(error)
+    if (error) throw Error(error)
     console.log(success)
 }
 ```
