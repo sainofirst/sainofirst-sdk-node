@@ -2,3 +2,4 @@ tsconfig.json
 tests
 src
 .gitignore
+_config.yml
