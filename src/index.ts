@@ -8,7 +8,7 @@ import * as errors from "./errors.json";
  * 
  */
 
-export class Sainofirst {
+export default class Sainofirst {
     /**
      * Sainofirst api key
      * 

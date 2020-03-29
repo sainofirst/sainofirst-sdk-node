@@ -1,7 +1,5 @@
 import * as config from "../../config.json"
 import * as errors from "../../errors.json"
-
-import { smsRequestSchema, smsSettings, smsConfig } from "./index.interface";
 import axios, {AxiosInstance} from "axios"
 
 /**
@@ -18,12 +16,10 @@ export default class Sms {
     /**
      * request data
      */
-    private __requestData:Object
+    private __requestData: any
     
-    private __http:AxiosInstance;
-    http: any;
-    
-   
+    private __http: AxiosInstance;
+  
     constructor(apiKey?:String){
         
          // if environment variable is set it will have that value if not then it will have api key provided via constructor
@@ -78,9 +74,42 @@ export default class Sms {
             this.__requestData = {...this.__requestData, "flash":options['flash']}      
         }
 
+        return this
+
     }
 
     /**
+     * Schedules a text message
+     * @param time - Schedule time (in format i.e, yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent
+     * 
+     */
+    schedule(time:string){
+
+
+        this.__requestData = {...this.__requestData, time:time}
+        return this;
+    }
+
+    /**
+     * Set the list of  numbers for sms to be send to
+     * @param numbers list of numbers you want your SMS to be delivered to
+     */
+
+    numbers(numbers:Array<string>) {
+        this.__requestData= {...this.__requestData, number:numbers}
+        return this
+    }
+
+    /**
+     *  Set text body for the sms
+     * @param message text content of SMS
+     */
+    message(message:string, ) { 
+        this.__requestData= {...this.__requestData, message:message}
+        return this;
+    }
+
+     /**
      * Sends SMS
      * 
      */
@@ -101,8 +130,8 @@ export default class Sms {
             }
                 
             
-            if (typeof args[-1] === 'function') {
-                callback = args[-1]
+            if (typeof args[args.length-1] === 'function') {
+                callback = args[args.length-1]
                 callbackExist = true
 
             }
@@ -136,7 +165,7 @@ export default class Sms {
 
     if(callbackExist) {
 
-        this.http.request({
+      this.__http.request({
             url:config.endpoints["bulk-sms"],
             method:'POST',
             data: this.__requestData
@@ -152,7 +181,7 @@ export default class Sms {
     } else {
         return new Promise((resolve, reject)=>{
 
-            this.http.request({
+            this.__http.request({
                 url:config.endpoints["bulk-sms"],
                 method:'POST',
                 data: this.__requestData
@@ -169,38 +198,6 @@ export default class Sms {
 
         
        
-    }
-
-
-    /**
-     * Schedules a text message
-     * @param time - Schedule time (in format i.e, yyyy-mm-dd hh:mm:ss) at which the SMS has to be sent
-     * 
-     */
-    schedule(time:string){
-
-
-        this.__requestData = {...this.__requestData, time:time}
-        return this;
-    }
-
-    /**
-     * Set the list of  numbers for sms to be send to
-     * @param numbers list of numbers you want your SMS to be delivered to
-     */
-
-    numbers(numbers:Array<string>) {
-        this.__requestData= {...this.__requestData, number:numbers}
-        return this
-    }
-
-    /**
-     *  Set text body for the sms
-     * @param message text content of SMS
-     */
-    message(message:string, ) { 
-        this.__requestData= {...this.__requestData, message:message}
-        return this;
     }
 
     /**
