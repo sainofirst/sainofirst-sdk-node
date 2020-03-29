@@ -93,7 +93,7 @@ const sms = sf.sms
 To access individual service begin by importing that service
 
 ```js
-const Sms = require("sainofirst/services/sms")
+const Sms = require("sainofirst/lib/services/sms")
 ```
 creating an instance of the service and assign it to a variable.
 
@@ -138,7 +138,7 @@ const sms = sf.sms
 Alternatively if you do not want to load whole sdk you can also access individual services. To access individual service begin by importing that service
 
 ```js
-const Sms = require("sainofirst/services/sms")
+const Sms = require("sainofirst/lib/services/sms")
 ```
 Create an instance of the service and assign it to a variable. Make sure you have configured your apikey in environment variable.
 
@@ -163,30 +163,26 @@ function callback(success, error){
 
 You can easily send text message by setting your text message using message method, Array of numbers by using numbers method and setting required options using set method and then calling send method along with callback
 
-```js
- 
-    sms.message("your text message here") 
-        .numbers(["91888xxxxx", "918323xxxx"])
-        .set({  
-            "senderid" : "SAIFST", 
-            "route" : "Transactional"  
-        }).send(callback) 
-
+```js 
+sms.message("your text message here") 
+    .numbers(["91888xxxxx", "918323xxxx"])
+    .set({  
+        "senderid" : "SAIFST", 
+        "route" : "Transactional"  
+    }).send(callback) 
 ```
 
 ## Scheduling a text message
 
 Use schedule method to schedule your text message
 ```js
- 
-    sms.message("your text message here") 
-        .numbers(["91888xxxxx", "918323xxxx"])
-        .schedule("2020-11-03 15:40:05")
-        .set({  
-            "senderid" : "SAIFST", 
-            "route" : "Transactional"      
-        }).send(callback) 
-
+sms.message("your text message here") 
+    .numbers(["91888xxxxx", "918323xxxx"])
+    .schedule("2020-11-03 15:40:05")
+    .set({  
+        "senderid" : "SAIFST", 
+        "route" : "Transactional"      
+    }).send(callback) 
 ```
 
 ## Sending a message in any language
@@ -200,15 +196,13 @@ If you want to send text message in any language you will have to configure an a
 
 
 ```js
-
-    sms.message("your text message here") 
-        .numbers(["91888xxxxx", "918323xxxx"])
-        .set({  
-            "senderid" : "SAIFST", 
-            "route" : "Transactional"  
-            "unicode" : 1     
-        }).send(callback) 
-
+sms.message("your text message here") 
+    .numbers(["91888xxxxx", "918323xxxx"])
+    .set({  
+        "senderid" : "SAIFST", 
+        "route" : "Transactional"  
+        "unicode" : 1     
+    }).send(callback) 
 ```
 
 ## Sending a flash message
@@ -221,15 +215,13 @@ If you want send a flash message set additional option `flash` to 1
 
 
 ```js
- 
-    sms.message("your text message here") 
-        .numbers(["91888xxxxx", "918323xxxx"])
-        .set({  
-            "senderid" : "SAIFST", 
-            "route" : "Transactional"  
-            "flash" : 1          
-        }).send(callback) 
-
+sms.message("your text message here") 
+    .numbers(["91888xxxxx", "918323xxxx"])
+    .set({  
+        "senderid" : "SAIFST", 
+        "route" : "Transactional"  
+        "flash" : 1          
+    }).send(callback) 
 ```
 
 ## Sending multiple message with same configuration options
@@ -389,7 +381,7 @@ const voice = sf.voice
 Alternatively if you do not want to load whole sdk you can also access individual services. To access individual service begin by importing that service
 
 ```js
-const Voice = require("sainofirst/services/voice")
+const Voice = require("sainofirst/lib/services/voice")
 ```
 Create an instance of the service and assign it to a variable. Make sure you have configured your apikey in environment variable.
 
@@ -413,12 +405,12 @@ function callback(success, error){
 To make an audio call set url to the audio file by using `audio` method and Array of numbers by using `numbers` method. Configure required options using `set` method and execute a `send` method with a callback function
 
 ```js
-    voice.audio("audio_file_url")  
-        .numbers(["91888xxxxx", "918323xxxx"]) 
-        .set({
-            "subscription_id" : 26236, 
-            "maxLengthOfCall" : 14,  
-        }).send(callback)
+voice.audio("audio_file_url")  
+    .numbers(["91888xxxxx", "918323xxxx"]) 
+    .set({
+        "subscription_id" : 26236, 
+        "maxLengthOfCall" : 14,  
+    }).send(callback)
 ```
 
 ## Making text synthesized voice call
@@ -431,14 +423,14 @@ If you want to make text synthesized voice call you will be required to configur
 |language_id  | `Number`| Language ID of the text to be converted via Text-to-Speech synthesis. |
 
 ```js
-    voice.text("your message")  
-        .numbers(["91888xxxxx", "918323xxxx"]) 
-        .set({
-            "subscription_id" : 26236, 
-            "maxLengthOfCall" : 14,  
-            "speech_rate" : 1, 
-            "language_id" : 0, 
-        }).send(callback)
+voice.text("your message")  
+    .numbers(["91888xxxxx", "918323xxxx"]) 
+    .set({
+        "subscription_id" : 26236, 
+        "maxLengthOfCall" : 14,  
+        "speech_rate" : 1, 
+        "language_id" : 0, 
+    }).send(callback)
 ```
 
 
@@ -448,27 +440,27 @@ Use `schedule` method to schedule a call
 ### Scheduling an audio call
 
 ```js
-    voice.audio("audio_file_url")  
-        .numbers(["91888xxxxx", "918323xxxx"]) 
-        .schedule("2020-11-03 15:40:05", "Asia/Kolkata (GMT +05:30)")
-        .set({
-            "subscription_id" : 26236, 
-            "maxLengthOfCall" : 14,  
-        }).send(callback)
+voice.audio("audio_file_url")  
+    .numbers(["91888xxxxx", "918323xxxx"]) 
+    .schedule("2020-11-03 15:40:05", "Asia/Kolkata (GMT +05:30)")
+    .set({
+        "subscription_id" : 26236, 
+        "maxLengthOfCall" : 14,  
+    }).send(callback)
 ```
 
 ### Scheduling text synthesized call
 
 ```js
-    voice.text("your message")  
-        .numbers(["91888xxxxx", "918323xxxx"]) 
-        .schedule("2020-11-03 15:40:05", "Asia/Kolkata (GMT +05:30)")
-        .set({
-            "subscription_id" : 26236, 
-            "maxLengthOfCall" : 14,  
-            "speech_rate" : 1, 
-            "language_id" : 0, 
-        }).send(callback)
+voice.text("your message")  
+    .numbers(["91888xxxxx", "918323xxxx"]) 
+    .schedule("2020-11-03 15:40:05", "Asia/Kolkata (GMT +05:30)")
+    .set({
+        "subscription_id" : 26236, 
+        "maxLengthOfCall" : 14,  
+        "speech_rate" : 1, 
+        "language_id" : 0, 
+    }).send(callback)
 ```
 
 
@@ -526,39 +518,39 @@ The `config` option is used to make a advanced voice call. It further has two op
 ### Advanced audio call
 
 ```js
-    voice.audio("audio_file_url")  
-        .numbers(["91888xxxxx", "918323xxxx"]) 
-        .set({
-            "subscription_id" : 26236, 
-            "maxLengthOfCall" : 14,
-            "config" : { 
-                "repeat" : 0,
-                "callTransfer" : {
-                    "transferKey" : 4,
-                    "transferNumber" : 8798190000
-                }
-            }  
-        }).send(callback)
+voice.audio("audio_file_url")  
+    .numbers(["91888xxxxx", "918323xxxx"]) 
+    .set({
+        "subscription_id" : 26236, 
+        "maxLengthOfCall" : 14,
+        "config" : { 
+            "repeat" : 0,
+            "callTransfer" : {
+                "transferKey" : 4,
+                "transferNumber" : 8798190000
+            }
+        }  
+    }).send(callback)
 ```
 
 ### Advanced text synthesized voice call
 
 ```js
-    voice.text("your message")  
-        .numbers(["91888xxxxx", "918323xxxx"]) 
-        .set({
-            "subscription_id" : 26236, 
-            "maxLengthOfCall" : 14,  
-            "speech_rate" : 1, 
-            "language_id" : 0, 
-            "config" : { 
-                "repeat" : 0,
-                "callTransfer" : {
-                    "transferKey" : 4,
-                    "transferNumber" : 8798190000
-                }
+voice.text("your message")  
+    .numbers(["91888xxxxx", "918323xxxx"]) 
+    .set({
+        "subscription_id" : 26236, 
+        "maxLengthOfCall" : 14,  
+        "speech_rate" : 1, 
+        "language_id" : 0, 
+        "config" : { 
+            "repeat" : 0,
+            "callTransfer" : {
+                "transferKey" : 4,
+                "transferNumber" : 8798190000
             }
-        }).send(callback)
+        }
+    }).send(callback)
 ```
 
 
@@ -578,6 +570,7 @@ requestData = voice.audio("audio_file_url")
 ```
 
 ### Get request data for text synthesized voice call
+
 ```js
 requestData = voice.text("your message")  
                     .numbers(["91888xxxxx", "918323xxxx"]) 
@@ -611,7 +604,7 @@ Use `audio_file_url` option to provide audio file url while making an audio call
 
 ```js
 voice.send({
-    "is_text" : False,
+    "is_text" : false,
     "numbers" : ["8699xxxxxx", "9435xxxxxx"],
     "subscription_id" : 26236,
     "maxLengthOfCall" : 14
@@ -630,7 +623,7 @@ To make a text synthesized voice call you will be required to provide following 
 
 ```js
 voice.send({
-    "is_text" : True,
+    "is_text" : true,
     "numbers" : ["8699xxxxxx", "9435xxxxxx"]
     "subscription_id" : 26236,
     "maxLengthOfCall" : 14, 
@@ -653,7 +646,7 @@ If you want to schedule a voice call set `send_at` to time at which you want to 
 
 ```js
 voice.send({
-    "is_text" : False,
+    "is_text" : false,
     "audio_file_url" : "your audio file url",
     "numbers" : ["8699xxxxxx", "9435xxxxxx"],
     "subscription_id" : 26236,
@@ -667,7 +660,7 @@ voice.send({
 
 ```js
 voice.send({
-    "is_text" : True,
+    "is_text" : true,
     "text" : "your text message here",
     "numbers" : ["8699xxxxxx", "9435xxxxxx"]
     "subscription_id" : 26236,
@@ -699,7 +692,7 @@ The `config` option is used to make a advanced voice call. It has two properties
 
 ```js
 voice.send({
-    "is_text" : False,
+    "is_text" : false,
     "audio_file_url" : "your audio file url",
     "numbers" : ["8699xxxxxx", "9435xxxxxx"],
     "subscription_id" : 26236,
@@ -717,7 +710,7 @@ voice.send({
 
 ```js
 voice.send({
-    "is_text" : True,
+    "is_text" : true,
     "text" : "your text message here",
     "numbers" : ["8699xxxxxx", "9435xxxxxx"]
     "subscription_id" : 26236,
