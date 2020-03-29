@@ -6,7 +6,7 @@ import axios, {AxiosInstance} from "axios"
  *  Programmatically send high volumes of text messages globally. Your users can get OTP, alerts, stock prices, account balance, transaction statements, discounts, offers and much more all over a message.
  */
 
-export default class Sms {
+class Sms {
    /**
      * Sainofirst api key
      * 
@@ -265,3 +265,5 @@ export default class Sms {
     }
 
 }
+
+export  = Sms

@@ -1,6 +1,6 @@
 import Sms from "./services/sms";
 import Voice from "./services/voice";
-import * as errors from "./errors.json";
+import errors from "./errors.json";
 
 /**
  * 
@@ -8,7 +8,7 @@ import * as errors from "./errors.json";
  * 
  */
 
-export default class Sainofirst {
+class Sainofirst {
     /**
      * Sainofirst api key
      * 
@@ -41,3 +41,4 @@ export default class Sainofirst {
 }
 
 
+export  =  Sainofirst

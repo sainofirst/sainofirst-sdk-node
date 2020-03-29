@@ -686,7 +686,7 @@ The `config` option is used to make a advanced voice call. It has two properties
 | option    | type | description |
 | ------     | -------- | -------- |
 |repeat  | `Number` | Value must be a single digit number. On press of this number key, the call will be repeated.|
-|callTransfer| `Dict` | Use to configure call transfer|
+|callTransfer| `Object` | Use to configure call transfer|
 
 `callTransfer` is used to do a call transfer on press of a key. It has two properties
 

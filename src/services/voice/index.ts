@@ -5,7 +5,7 @@ import axios, {AxiosInstance} from "axios"
  *  Programmatically send voice calls globally. Build conversations anywhere and everywhere. Make calls around the world. 
     Your users can get OTP, alerts and much more all over a message.
  */
-export default class Voice {
+class Voice {
    /**
      * Sainofirst api key
      */
@@ -396,3 +396,4 @@ export default class Voice {
 
 }
 
+export = Voice
