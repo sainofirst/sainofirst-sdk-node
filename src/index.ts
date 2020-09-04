@@ -1,5 +1,6 @@
 import Sms from "./services/sms";
 import Voice from "./services/voice";
+import Email from "./services/email";
 import errors from "./errors.json";
 
 /**
@@ -13,32 +14,38 @@ class Sainofirst {
      * Sainofirst api key
      * 
      */
-    private __apiKey:String;
+    private __apiKey: String;
 
 
-     /**
-     * sms service instance
-     */
-    sms:Sms;
+    /**
+    * sms service instance
+    */
+    sms: Sms;
 
     /**
      * voice service instance
      */
-    voice:Voice;
+    voice: Voice;
 
-    constructor(apiKey?:String) {
-        
+    /**
+     * email service instance
+     */
+    email: Email;
+
+    constructor(apiKey?: String) {
+
         // if environment variable is set it will have that value if not then it will have api key provided via constructor
-        this.__apiKey =  apiKey || process.env.SAINOFIRST_API_KEY 
+        this.__apiKey = apiKey || process.env.SAINOFIRST_API_KEY
         this.sms = new Sms(this.__apiKey);
         this.voice = new Voice(this.__apiKey);
-        
-        
-        if(this.__apiKey === undefined )  throw Error(errors["SFV001"])
-        if(typeof this.__apiKey !== "string") throw Error(errors["SFT001"])
-        if(this.__apiKey.trim() === "") throw Error(errors["SFV002"])
-    }  
+        this.email = new Email(this.__apiKey);
+
+
+        if (this.__apiKey === undefined) throw Error(errors["SFV001"])
+        if (typeof this.__apiKey !== "string") throw Error(errors["SFT001"])
+        if (this.__apiKey.trim() === "") throw Error(errors["SFV002"])
+    }
 }
 
 
-export  =  Sainofirst
+export =  Sainofirst

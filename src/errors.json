@@ -87,8 +87,47 @@
         "SFT031" : "SFT031: 'new_send_at' should be a string",
         "SFT032" : "SFT032: 'new_send_at' should not be a empty string",
         "SFV035" : "SFV035:  please enter 'new_send_at' in proper format (YYYY-MM-DD HH:MM:SS)",
-        "SFV036" : "SFV036: 'speech_rate1' should be between 0.5 and 2"
+        "SFV036" : "SFV036: 'speech_rate1' should be between 0.5 and 2",
 
+
+        "SFE001" : "SFE001: 'to' field cannot be undefined while sending a email.",
+        "SFE002" : "SFE002: 'to' field cannot be empty while sending a email.",
+        "SFE003" : "SFE003: 'to' field data type should be string or object(Instance of Array).",
+        "SFE004" : "SFE004: invalid email id in 'to' field.",
+
+        "SFE005" : "SFE005: 'subject' field cannot be undefined while sending a email.",
+        "SFE006" : "SFE006: 'subject' field data type should be string.",
+        "SFE007" : "SFE007: 'subject' field cannot be empty while sending a email.",
+
+        "SFE008" : "SFE008: 'from' field cannot be undefined while sending a email.",
+        "SFE009" : "SFE009: 'from' field data type should be string.",
+        "SFE010" : "SFE010: 'from' field cannot be empty while sending a email.",
+        "SFE011" : "SFE011: invalid email id in 'from' field.",
+
+        "SFE012" : "SFE012: 'fromName' field data type should be string",
+        "SFE013" : "SFE013: 'fromName' field cannot be empty while sending a email.",
+
+        "SFE014" : "SFE014: 'bodyHtml' field data type should be string",
+        "SFE015" : "SFE015: 'bodyHtml' field cannot be empty while sending a email.",
+
+        "SFE016" : "SFE016: 'trackClicks' field data type should be boolean",
+
+        "SFE017" : "SFE017: 'trackOpens' field data type should be boolean",
+
+        "SFE018" : "SFE018: 'replyToEmail' field data type should be string",
+        "SFE019" : "SFE019: 'replyToEmail' field cannot be empty while sending a email.",
+        "SFE020" : "SFE020: invalid email id in 'replyToEmail' field.",
+
+        "SFE021" : "SFE021: 'replyToName' field data type should be string",
+        "SFE022" : "SFE022: 'replyToName' field cannot be empty while sending a email.",
+
+        "SFE023" : "SFE023: 'bodyText' field data type should be string",
+        "SFE024" : "SFE024: 'bodyText' field cannot be empty while sending a email.",
+
+        "SFE025" : "SFE025: 'attachments' field data type should be object(Instance of Array)",
+        "SFE026" : "SFE026: 'attachments' values data types should be number.",
+
+        "SFE027" : "SFE027: 'bodyHtml' and 'bodyText' fields cannot be empty while sending a email."
 
 
 }

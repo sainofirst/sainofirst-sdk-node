@@ -1,6 +1,6 @@
 import Sainofirst from '../src/index'
 var assert = require('assert');
-let test = require('./tests.json')
+// let test = require('./tests.json')
 
 
 
