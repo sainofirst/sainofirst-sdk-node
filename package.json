@@ -1,6 +1,6 @@
 {
   "name": "sainofirst",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The Sainofirst SDK for javascript provides a javascript API for Sainofirst communication services.",
   "main": "lib/index.js",
   "scripts": {
@@ -11,6 +11,10 @@
     {
       "name": "Shubz Kothekar",
       "url": "http://www.shubzkothekar.com"
+    },
+    {
+      "name": "Sahil Khaire",
+      "url": "http://www.sahilkhaire.com"
     }
   ],
   "keywords": [

@@ -1,9 +1,11 @@
 {
     "baseURL":"https://api.sainofirst.com/api/apis",
     "endpoints": {
-        "bulk-sms":"/bulk-sms",
-        "bulk-voice":"/bulk-voice",
-        "bulk-voice/reschedule":"/bulk-voice/reschedule",
-        "bulk-voice/cancelScheduled":"bulk-voice/cancelScheduled"
+        "bulk-sms": "/bulk-sms",
+        "bulk-voice": "/bulk-voice",
+        "bulk-voice/reschedule": "/bulk-voice/reschedule",
+        "bulk-voice/cancelScheduled": "bulk-voice/cancelScheduled",
+        "send-email": "/email/send",
+        "upload-email-attachment": "/email/upload-attachment"
     }
 }
