@@ -5,25 +5,25 @@ const fs = require('fs');
 
 
 describe('Email', function () {
-    it('should return true', function (done) {
+    it.only('should return true', function (done) {
         const sf = new Sainofirst("==/asd")
         sf.email.send({
-            to: "sahil@sainofirst.com",
-            subject: "sahil sdk test 1",
-            from: "sahil@sainofirst.com",
+            to: "test@test.com",
+            subject: " sdk test 1",
+            from: "test@test.com",
             bodyHtml: "<h1>SDK Test with attchments</h1>",
-            fromName: "sahil",
-            attachments: [13]
+            fromName: "test",
+            attachments: [13],
+            callbackUrl: "https://test.com/webhook"
         }, (res, err) => {
-            console.log(err, res, "error");
-            assert.equal(res.status, true)
+            console.log(res, err, true)
             done()
         })
     });
 
     it('attchment upload', function (done) {
         const formData = new FormData();
-        formData.append('yinyang.png', fs.createReadStream('/home/sahil/Downloads/sainofirst500.png'));
+        formData.append('yinyang.png', fs.createReadStream('/link-to-file/'));
 
         const sf = new Sainofirst("asd")
 
@@ -37,7 +37,7 @@ describe('Email', function () {
 
     it('attchment upload', async function () {
         const formData = new FormData();
-        formData.append('yinyang.png', fs.createReadStream('/home/sahil/Downloads/sainofirst500.png'));
+        formData.append('yinyang.png', fs.createReadStream('/link-to-file/'));
 
         const sf = new Sainofirst("==/da")
 
