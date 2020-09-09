@@ -727,3 +727,106 @@ voice.send({
 },callback)
 ```
 
+# Email Service
+Saino First provides a service named Email API. An email API service allows you to send emails to large lists of multiple recipients by incorporating email into your applications. 
+
+Our email API allows you to send emails to users around the globe through simple RESTful APIs. You can send one email to many people, or a unique email to each person on your list with an email API service.
+
+You can send marketing messages, newsletters, updates, coupons, and invitations through email API. 
+
+
+## Using Email service
+
+Begin by loading Sainofirst SDK into your node js project.
+
+```js
+const Sainofirst = require("sainofirst")
+```
+
+Create a new instance of Sainofirst SDK. Make sure you have configured your apikey in environment variable.
+
+```js
+const sf = new Sainofirst()
+```
+
+Access email service from the SDK.
+
+```js
+const email = sf.email
+```
+
+Alternatively if you do not want to load whole sdk you can also access individual services. To access individual service begin by importing that service
+
+```js
+const Email = require("sainofirst/lib/services/email")
+```
+Create an instance of the service and assign it to a variable. Make sure you have configured your apikey in environment variable.
+
+```js
+const email = new Email()
+```
+
+Define a callback function which will get executed after recieving response from Sainofirst server.
+
+```js
+function callback(success, error){
+    if (error) throw Error(error)
+    console.log(success)
+}
+```
+
+### Send Email
+
+#### parameters
+| option  | Required/optional  | type | description |
+| ------  |-------  | -------- | -------- |
+| to  |`REQUIRED` | `array` | This is to contain email ids where you need to send emails. you can add multiple email ids where you need to send emails |
+| subject | `REQUIRED` | `string` | This contains email subject |
+| from | `REQUIRED` | `string` | This is a from email id. you can assigned only verified email id. you can verify from email id from sainofirst dashboard by below-specified section. dashboard -> bulk email -> settings-> domain |
+| fromName | `REQUIRED` | `string` | Display name for from email address |
+| bodyHtml | `OPTIONAL` | `string` | This field used to send html content in email either bodyHtml or bodyText is required |
+| bodyText | `OPTIONAL` | `string` | This field used to send normal text content in email either bodyHtml or bodyText is required |
+| trackClicks | `OPTIONAL` | `boolean` | Should the click be tracked? If no value has been provided, Account's default setting will be used.|
+| trackOpens | `OPTIONAL` | `boolean` | Should the opens be tracked? If no value has been provided, Account's default setting will be used |
+| replyToEmail | `OPTIONAL` | `string` | Email address to reply to | 
+| replyToName  | `OPTIONAL` | `string` | Name to replay to name |
+| attachments | `OPTIONAL` | `array` | An array of ID's of attachments. Note: you can get attachment id from uploading attachment by upload attachment API |
+| callbackUrl | `OPTIONAL` | `string` |Call back where you received notifications related to email. |
+
+```js
+const sf = new Sainofirst("<sainofirst_api_token>");
+
+sf.email.send({
+    to: ["test@test.com"],
+    subject: "email subject",
+    from: "name@domain.com",
+    bodyHtml: "<h1>Html Body</h1>",
+    fromName: "sahil",
+}, (res, err) => {
+    console.log(res, err)
+})
+ ```
+
+
+### Upload Email Attachment
+
+Purpose of API is whenever the user wants to send an attachment in the email. user need to upload attachment in sainofirst platform first. sainofirst will provide id represents to attachment. and the user can send this id in send email API's attachment field to send attachment along with the email. 
+
+#### parameters
+| option  | Required/optional  | type | description |
+| ------  |-------  | -------- | -------- |
+| file | `REQUIRED` | `form-data` | binary file data |
+
+```js
+const sf = new Sainofirst("<sainofirst_api_token>");
+
+const FormData = require('form-data');
+const formData = new FormData();
+formData.append('file', fs.createReadStream(/path-to-your-file/));
+
+sf.email.upload(formData, (res, err) => {
+    console.log(res, err);
+})
+
+ ```
+
