@@ -127,7 +127,10 @@
         "SFE025" : "SFE025: 'attachments' field data type should be object(Instance of Array)",
         "SFE026" : "SFE026: 'attachments' values data types should be number.",
 
-        "SFE027" : "SFE027: 'bodyHtml' and 'bodyText' fields cannot be empty while sending a email."
+        "SFE027" : "SFE027: 'bodyHtml' and 'bodyText' fields cannot be empty while sending a email.",
+
+        "SFE028" : "SFE021: 'callbackUrl' field data type should be string",
+        "SFE029" : "SFE022: Invalid 'callbackUrl' value."
 
 
 }

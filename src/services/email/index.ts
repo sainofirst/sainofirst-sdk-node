@@ -101,7 +101,7 @@ class Email {
         this.__requestData = {}
         callback(r.data, null)
       }).catch(e => {
-        callback(null, e.response.data)
+        callback(null, e.response)
       })
 
     } else {
@@ -115,7 +115,7 @@ class Email {
           this.__requestData = {}
           resolve(r.data)
         }).catch(e => {
-          reject(e.response.data)
+          reject(e.response)
         })
 
       })
@@ -185,7 +185,7 @@ class Email {
         this.__requestData = {}
         callback(r.data, null)
       }).catch(e => {
-        callback(null, e.response.data)
+        callback(null, e.response)
       })
 
     } else {
@@ -198,7 +198,7 @@ class Email {
           this.__requestData = {}
           resolve(r.data)
         }).catch(e => {
-          reject(e.response.data)
+          reject(e.response)
         })
 
       })
@@ -303,6 +303,22 @@ class Email {
     //body validation
     if (this.__requestData.bodyText === undefined && this.__requestData.bodyHtml === undefined)
       throw new Error(errors['SFE027']);
+
+    //validating callback url
+    if (this.__requestData.callbackUrl !== undefined && typeof this.__requestData.callbackUrl !== "string")
+      throw new Error(errors['SFE028']);
+    if (typeof this.__requestData.callbackUrl === "string" && !this.isUrlValid(this.__requestData.callbackUrl))
+      throw new Error(errors['SFE029']);
+  }
+
+  private isUrlValid = (str) => {
+    var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+      '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+      '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+      '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+    return !!pattern.test(str);
   }
 }
 
