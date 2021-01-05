@@ -727,6 +727,8 @@ voice.send({
 },callback)
 ```
 
+
+
 # Email Service
 Saino First provides a service named Email API. An email API service allows you to send emails to large lists of multiple recipients by incorporating email into your applications. 
 
@@ -828,5 +830,113 @@ sf.email.upload(formData, (res, err) => {
     console.log(res, err);
 })
 
+ ```
+
+
+# Email Cleaner Service
+Saino First provides a service named Email Cleaner API. An email cleaner API service allows you to cleans emails in large lists into your applications. 
+
+## Using Email Cleaner service
+
+Begin by loading Sainofirst SDK into your node js project.
+
+```js
+const Sainofirst = require("sainofirst")
+```
+
+Create a new instance of Sainofirst SDK. Make sure you have configured your apikey in environment variable.
+
+```js
+const sf = new Sainofirst()
+```
+
+Access email clenaer service from the SDK.
+
+```js
+const emailCleaner = sf.emailCleaner
+```
+
+Alternatively if you do not want to load whole sdk you can also access individual services. To access individual service begin by importing that service
+
+```js
+const EmailCleaner = require("sainofirst/lib/services/email-verification")
+```
+Create an instance of the service and assign it to a variable. Make sure you have configured your apikey in environment variable.
+
+```js
+const email = new EmailCleaner()
+```
+
+Define a callback function which will get executed after recieving response from Sainofirst server.
+
+```js
+function callback(success, error){
+    if (error) throw Error(error)
+    console.log(success)
+}
+```
+
+### Clean Single Email
+
+#### parameters
+| option  | Required/optional  | type | description |
+| ------  |-------  | -------- | -------- |
+| email  |`REQUIRED` | `string` | This is to contain email id which you need to verify. |
+| callbackUrl | `OPTIONAL` | `string` |Call back where you received notifications related to email. |
+
+```js
+const sf = new Sainofirst("<sainofirst_api_token>");
+
+ sf.emailCleaner.Singel({
+    email: 'name@domain.com'
+}, (res, err) => {
+    console.log(res, err, true)
+    done()
+})
+ ```
+
+
+### Verify Multiple Emails
+
+Purpose of API is whenever the user wants to clean lots of email id then he can upload file using below API and get cleaned email id list.
+
+#### parameters
+| option  | Required/optional  | type | description |
+| ------  |-------  | -------- | -------- |
+| file | `REQUIRED` | `form-data` | binary file data |
+
+```js
+const sf = new Sainofirst("<sainofirst_api_token>");
+
+const FormData = require('form-data');
+const formData = new FormData();
+formData.append('file', fs.createReadStream(/path-to-your-file/));
+
+sf.emailCleaner.Bulk(formData, (res, err) => {
+    console.log(err, res, "error");
+    // assert.equal(res.status, true)
+    done()
+})
+
+ ```
+ 
+ 
+### Status of Bulk Email
+
+#### parameters
+| option  | Required/optional  | type | description |
+| ------  |-------  | -------- | -------- |
+| bulk_id  |`REQUIRED` | `number` | this is procees identification number of bbluck list which you uploaed by previous api. |
+| callbackUrl | `OPTIONAL` | `string` |Call back where you received notifications related to email. |
+
+```js
+const sf = new Sainofirst("<sainofirst_api_token>");
+
+sf.emailCleaner.Status({
+    bulk_id: 1
+}, (res, err) => {
+    console.log(res, err, true)
+    done()
+});
  ```
 
