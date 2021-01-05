@@ -1,11 +1,15 @@
 {
-    "baseURL":"https://api.sainofirst.com/api/apis",
+    "baseURL1": "https://api.sainofirst.com/api/apis",
+    "baseURL": "https://testt.gomnp.com/api/apis",
     "endpoints": {
         "bulk-sms": "/bulk-sms",
         "bulk-voice": "/bulk-voice",
         "bulk-voice/reschedule": "/bulk-voice/reschedule",
         "bulk-voice/cancelScheduled": "bulk-voice/cancelScheduled",
         "send-email": "/email/send",
-        "upload-email-attachment": "/email/upload-attachment"
+        "upload-email-attachment": "/email/upload-attachment",
+        "single-email-verification": "/email-cleaning/verify-single",
+        "bulk-email-verification": "/email-cleaning/verify-bulk",
+        "bulk-email-status": "/email-cleaning/bulk-progress"
     }
 }

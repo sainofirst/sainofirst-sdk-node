@@ -1,6 +1,7 @@
 import Sms from "./services/sms";
 import Voice from "./services/voice";
 import Email from "./services/email";
+import EmailCleaner from './services/email-verification'
 import errors from "./errors.json";
 
 /**
@@ -32,6 +33,11 @@ class Sainofirst {
      */
     email: Email;
 
+    /**
+    * email cleaner service instance
+    */
+    emailCleaner: EmailCleaner;
+
     constructor(apiKey?: String) {
 
         // if environment variable is set it will have that value if not then it will have api key provided via constructor
@@ -39,6 +45,7 @@ class Sainofirst {
         this.sms = new Sms(this.__apiKey);
         this.voice = new Voice(this.__apiKey);
         this.email = new Email(this.__apiKey);
+        this.emailCleaner = new EmailCleaner(this.__apiKey);
 
 
         if (this.__apiKey === undefined) throw Error(errors["SFV001"])
