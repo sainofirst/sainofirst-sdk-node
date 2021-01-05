@@ -130,7 +130,15 @@
         "SFE027" : "SFE027: 'bodyHtml' and 'bodyText' fields cannot be empty while sending a email.",
 
         "SFE028" : "SFE021: 'callbackUrl' field data type should be string",
-        "SFE029" : "SFE022: Invalid 'callbackUrl' value."
+        "SFE029" : "SFE022: Invalid 'callbackUrl' value.",
 
 
+        "SFC001":"SFC001: 'email' field cannot be empty.",
+        "SFC002":"SFC002: Invalid email id in 'email' field.",
+        "SFC003":"SFC003: .",
+        "SFC004":"SFC004: .",
+        "SFC005":"SFC005: .",
+        "SFC006":"SFC006: .",
+        "SFC007":"SFC007: .",
+        "SFC008":"SFC008: ."
 }

@@ -4,7 +4,7 @@ const FormData = require('form-data');
 const fs = require('fs');
 
 
-describe('Email', function () {
+describe.skip('Email', function () {
     it.only('should return true', function (done) {
         const sf = new Sainofirst("==/asd")
         sf.email.send({
