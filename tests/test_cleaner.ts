@@ -6,7 +6,7 @@ const fs = require('fs');
 
 describe('Email Cleaner', function () {
     it.only('should return true', function (done) {
-        const sf = new Sainofirst("7yq7x1hlydj8hyxccfjo130m7usey6g6dy6rdmc61al5411m==/twidh969f46e8v121609584683074")
+        const sf = new Sainofirst("7yq7x1hlydj8hyxccf9f46e8v121609584683074")
         sf.emailCleaner.Singel({
             email: 'sahil2@saino.io'
         }, (res, err) => {
@@ -17,7 +17,7 @@ describe('Email Cleaner', function () {
 
     it.skip('attchment upload', function (done) {
         const formData = new FormData();
-        formData.append('file', fs.createReadStream('/home/sahil/Documents/email-cleaning-test/test1.csv'));
+        formData.append('file', fs.createReadStream('/path-to-file'));
 
         const sf = new Sainofirst("7yq7x1hlydj8hyxccfjo130m46e8v121609584683074")
 
