@@ -132,6 +132,7 @@
         "SFE028" : "SFE021: 'callbackUrl' field data type should be string",
         "SFE029" : "SFE022: Invalid 'callbackUrl' value.",
 
+        "SFE030" : "SFE030: 'templateId' field data type should be number",
 
         "SFC001":"SFC001: 'email' field cannot be empty.",
         "SFC002":"SFC002: Invalid email id in 'email' field.",

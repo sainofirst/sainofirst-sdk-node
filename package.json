@@ -1,6 +1,6 @@
 {
   "name": "sainofirst",
-  "version": "1.0.4",
+  "version": "1.1.6",
   "description": "The Sainofirst SDK for javascript provides a javascript API for Sainofirst communication services.",
   "main": "lib/index.js",
   "scripts": {

@@ -300,8 +300,12 @@ class Email {
       });
     }
 
+    //template_id validation
+    if (this.__requestData.templateId !== undefined && typeof this.__requestData.templateId !== "number")
+      throw new Error(errors['SFE030']);
+
     //body validation
-    if (this.__requestData.bodyText === undefined && this.__requestData.bodyHtml === undefined)
+    if (this.__requestData.bodyText === undefined && this.__requestData.bodyHtml === undefined && this.__requestData.templateId === undefined)
       throw new Error(errors['SFE027']);
 
     //validating callback url

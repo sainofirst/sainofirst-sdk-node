@@ -1,6 +1,6 @@
 {
-    "baseURL1": "https://api.sainofirst.com/api/apis",
-    "baseURL": "https://testt.gomnp.com/api/apis",
+    "baseURL": "https://api.saino.io/api/apis",
+    "baseURL1": "https://app11.saino.io/api/apis",
     "endpoints": {
         "bulk-sms": "/bulk-sms",
         "bulk-voice": "/bulk-voice",
